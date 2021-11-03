@@ -20,7 +20,7 @@
         var points = 0;
         var pointsPerClick = 1;
         var smileyIndex = 0;
-        var jukseKnapp = 
+        var jukseKnapp = 0;
 
         // controller
         function doClick() {
@@ -36,8 +36,9 @@
             updateView();
         }
         function jukseKnapp() {
-            if (points >=0)  points *= 10; pointsPerClick*= 10;
-           
+            if (points >=0)  
+            points *= 10; 
+            pointsPerClick*= 10;
             updateView();
         
         }
@@ -52,7 +53,6 @@
                 <button onclick="buyUpgrade()">Kjøp oppgradering (10 poeng)</button>
                 <button onclick="jukseKnapp()">Juks litt med denne</button>
             `;
-            if (onclick="jukseKnapp") 
         }
     </script>
     <div>
