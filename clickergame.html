@@ -20,7 +20,7 @@
         var points = 0;
         var pointsPerClick = 1;
         var smileyIndex = 0;
-        var jukseKnapp = 0;
+       // var til å vise at man har jukset
 
         // controller
         function doClick() {
@@ -36,10 +36,11 @@
             updateView();
         }
         function jukseKnapp() {
-            if (points >=0)  
+            if (points >=0) { 
             points *= 10; 
-            pointsPerClick*= 10;
+            pointsPerClick *= 10;
             updateView();
+            }
         
         }
 
