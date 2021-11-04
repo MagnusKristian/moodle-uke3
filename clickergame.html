@@ -13,13 +13,15 @@
 </head>
 
 <body>
-    <div id="app"></div>
+    <div id="altSkjerHer"></div>
 
     <script>
         // model
         var points = 0;
         var pointsPerClick = 1;
         var smileyIndex = 0;
+        var juksemaker = 1;
+        var kanye = "";
        // var til å vise at man har jukset
 
         // controller
@@ -39,21 +41,33 @@
             if (points >=0) { 
             points *= 10; 
             pointsPerClick *= 10;
+            juksemaker++;
             updateView();
             }
-        
+        function jukseMelding() {
+            if (juksemaker >=2)
+            kanye = "nå har du jukset";
+            document.getElementById('visJuks').innerHTML = kanye;
+            updateView();
+
+        }
         }
 
         // view
         updateView();
         function updateView() {
             var smiley = smileyIndex == 0 ? '😀' : '😁';
-            document.getElementById('app').innerHTML = `
+            //var 
+            
+            document.getElementById('altSkjerHer').innerHTML = `
                 <div id="image" onclick="doClick()">${smiley}</div>
                 <div id="pointsInfo">${points}</div>
                 <button onclick="buyUpgrade()">Kjøp oppgradering (10 poeng)</button>
                 <button onclick="jukseKnapp()">Juks litt med denne</button>
+                <h1 id="visJuks"> </h1>
             `;
+            //    document.getElementById('visJuks').innerHTML = kanye;
+            
         }
     </script>
     <div>
