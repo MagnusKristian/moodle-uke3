@@ -6,7 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     
+    <div id="hoved">
+
+    </div>
+    
+<script>
+    
+    //model
+    // det er feil på "svar" variabelen, må finne ut hvordan jeg kan 
+    //-legge fler alternativer under samme. parentes virker ikke....
+    //evt endre til const og legge til hakeparentes
+    let svarAlt = ['magnus', "Magnus" ,"magnus kristian", "Magnus Kristian"];
+   
+    let qwqw = "";
+    
+    let hovedDiv = document.getElementById('hoved');
+    
+   //view
+   show();
+        function show(){
+            let html = `
+            <h1>
+        Hva heter jeg?:
+    </h1>
+    <input onchange="checkUserinput( this.value)" >
+    <h2>${qwqw}</h2>
+
+
+            `;
+            hovedDiv.innerHTML = html;
+        }
+
+
+   //controller
+function checkUserinput(userinput){
+    //console.log(userinput, ' hva er input')
+   
+    if(userinput == svarAlt[0] || userinput == svarAlt[1] || userinput == svarAlt[2] || userinput == svarAlt[3]){
+
+        qwqw = "Riktig!";
+        //location.reload();
+       //hvordan implementere reload så neste gang du trykker eller prøver å skrive noe så blir "riktig/feil" borte?
+
+    }
+    else{
+        qwqw = "Feil!";
+        //location.reload();
+       
+    }
+    show();
+}
+</script>
 </body>
 </html>
